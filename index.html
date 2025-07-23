@@ -1,0 +1,1279 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ديارا المروج - الرياض</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Cairo', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #ffffff;
+            min-height: 100vh;
+            color: #333;
+            line-height: 1.7;
+            font-weight: 400;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(147, 197, 253, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 40% 60%, rgba(96, 165, 250, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: bold;
+            color: #1e40af;
+        }
+
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            background: #1e40af;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            font-size: 15px;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: #1e40af;
+        }
+
+        .search-box {
+            background: #f5f5f5;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 20px;
+            width: 200px;
+            outline: none;
+        }
+
+        .main-container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 30px;
+        }
+
+        .sidebar {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+        }
+
+        .property-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 25px;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .property-specs {
+            margin-bottom: 30px;
+        }
+
+        .property-specs h3 {
+            color: #1e40af;
+            margin-bottom: 20px;
+            font-size: 19px;
+            font-weight: 600;
+        }
+
+        .spec-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .spec-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #666;
+        }
+
+        .spec-item i {
+            color: #1e40af;
+            width: 16px;
+        }
+
+        .spec-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .spec-row:last-child {
+            border-bottom: none;
+        }
+
+        .spec-label {
+            color: #666;
+            font-size: 15px;
+            font-weight: 400;
+        }
+
+        .spec-value {
+            font-weight: 600;
+            color: #333;
+            font-size: 15px;
+        }
+
+        .price {
+            color: #1d4ed8;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .interest-btn {
+            background: #1e40af;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 10px;
+            width: 100%;
+            font-size: 17px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-family: 'Cairo', sans-serif;
+        }
+
+        .interest-btn:hover {
+            background: #1e3a8a;
+        }
+
+        .main-content {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .hero-section {
+            position: relative;
+            height: 400px;
+            background: linear-gradient(135deg, #74b9ff, #0984e3);
+            overflow: hidden;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px 15px 0 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .hero-nav {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-arrow {
+            background: rgba(255,255,255,0.8);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .nav-arrow:hover {
+            background: white;
+        }
+
+        .accessibility-btn {
+            background: rgba(30,64,175,0.8);
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .property-info {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: rgba(255,255,255,0.95);
+            padding: 15px 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+
+        .property-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1e40af;
+            margin-bottom: 5px;
+        }
+
+        .property-location {
+            color: #666;
+            font-size: 15px;
+            font-weight: 400;
+        }
+
+        .content-section {
+            padding: 30px;
+        }
+
+        .property-description {
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        .floor-plans {
+            margin-bottom: 40px;
+        }
+
+        .floor-plans h3 {
+            color: #1e40af;
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .plan-card {
+            border: 1px solid #eee;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .plan-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .plan-image {
+            width: 100%;
+            height: 200px;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #999;
+        }
+
+        .plan-info {
+            padding: 15px;
+            background: white;
+        }
+
+        .plan-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #1e40af;
+            font-size: 16px;
+        }
+
+        .plan-specs {
+            display: flex;
+            justify-content: space-between;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .plan-price {
+            color: #1d4ed8;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .features-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .features-column h3 {
+            color: #1e40af;
+            margin-bottom: 20px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .feature-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background: #1e40af;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .feature-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #333;
+            font-size: 15px;
+        }
+
+        .feature-subtitle {
+            font-size: 13px;
+            color: #666;
+            font-weight: 400;
+        }
+
+        .map-section {
+            margin-bottom: 30px;
+        }
+
+        .map-section h3 {
+            color: #1e40af;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .map-container {
+            position: relative;
+            height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #e0f2fe;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #e0f2fe, #b3e5fc);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #1e40af;
+            font-size: 16px;
+        }
+
+        .nearby-landmarks {
+            margin-top: 30px;
+        }
+
+        .nearby-landmarks h3 {
+            color: #1e40af;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .landmarks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .landmark-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .landmark-icon {
+            width: 30px;
+            height: 30px;
+            background: #1e40af;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+
+        .landmark-info {
+            flex: 1;
+        }
+
+        .landmark-name {
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .landmark-distance {
+            color: #666;
+            font-size: 12px;
+        }
+
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(37, 211, 102, 0.3);
+            transition: transform 0.3s;
+            z-index: 1000;
+            border: none;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Interest Form Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+
+        .modal-overlay.show {
+            display: flex;
+        }
+
+        .interest-modal {
+            background: white;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            animation: modalSlideIn 0.3s ease-out;
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-header {
+            padding: 20px 25px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2d5016;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            font-size: 20px;
+            color: #999;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .close-btn:hover {
+            background: #f5f5f5;
+            color: #666;
+        }
+
+        .modal-body {
+            padding: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: 'Cairo', sans-serif;
+            font-weight: 400;
+            transition: border-color 0.3s;
+            outline: none;
+        }
+
+        .form-input:focus {
+            border-color: #2d5016;
+            box-shadow: 0 0 0 2px rgba(45, 80, 22, 0.1);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 100px 1fr;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .country-code {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 12px 10px;
+            text-align: center;
+            color: #666;
+            font-weight: 500;
+        }
+
+        .radio-group {
+            display: flex;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .radio-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .radio-item input[type="radio"] {
+            margin: 0;
+            transform: scale(1.2);
+        }
+
+        .radio-item label {
+            margin: 0;
+            cursor: pointer;
+            color: #666;
+        }
+
+        .submit-btn {
+            background: #2d5016;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 8px;
+            width: 100%;
+            font-size: 17px;
+            font-weight: 600;
+            font-family: 'Cairo', sans-serif;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #1a2f0a;
+        }
+
+        .unit-selection {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .unit-option {
+            flex: 1;
+            padding: 10px;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .unit-option.selected {
+            border-color: #2d5016;
+            background: #f8fdf8;
+        }
+
+        .unit-option:hover {
+            border-color: #2d5016;
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .sidebar {
+                position: static;
+                order: 2;
+            }
+            
+            .features-section {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-building"></i>
+                </div>
+                <span>ريفا العقارية</span>
+            </div>
+            
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#">اكتشف المزيد</a></li>
+                    <li><a href="#">خريطة مشاريعنا</a></li>
+                    <li><a href="#">تصفح المشاريع</a></li>
+                    <li><input type="text" class="search-box" placeholder="ابحث عن عقارك"></li>
+                    <li><a href="#">تواصل معنا</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="property-logo">
+                <div class="logo-icon" style="width: 30px; height: 30px; font-size: 14px;">
+                    <i class="fas fa-building"></i>
+                </div>
+                <span>ديم العقارية</span>
+            </div>
+
+            <div class="property-specs">
+                <h3>مواصفات المشروع</h3>
+                
+                <div class="spec-grid">
+                    <div class="spec-item">
+                        <i class="fas fa-bed"></i>
+                        <span>4</span>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-expand"></i>
+                        <span>200 م²</span>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-home"></i>
+                        <span>1</span>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-bath"></i>
+                        <span>7</span>
+                    </div>
+                </div>
+
+                <div class="spec-row">
+                    <span class="spec-label">تاريخ النشر</span>
+                    <span class="spec-value">25-06-11</span>
+                </div>
+                
+                <div class="spec-row">
+                    <span class="spec-label">رخصة الإعلان</span>
+                    <span class="spec-value">7200560111</span>
+                </div>
+                
+                <div class="spec-row">
+                    <span class="spec-label">السعر</span>
+                    <span class="spec-value price">3,700,000 ر.س</span>
+                </div>
+            </div>
+
+            <button class="interest-btn" onclick="showInterestForm()">
+                <i class="fas fa-heart"></i>
+                تسجيل اهتمام
+            </button>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <img id="heroImage" src="https://fls-9ea20a57-aa90-4fb3-be13-1a37bcb31bde.laravel.cloud/project-media/01JXG0X4NNHCD87N91NKE43KH0.JPG" alt="ديارا المروج" class="hero-image">
+                
+                <div class="hero-nav">
+                    <button class="nav-arrow" onclick="previousImage()">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <button class="accessibility-btn">
+                        <i class="fas fa-wheelchair"></i>
+                    </button>
+                    <button class="nav-arrow" onclick="nextImage()">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                </div>
+
+                <div class="property-info">
+                    <div class="property-title">ديارا المروج</div>
+                    <div class="property-location">الرياض - المروج</div>
+                </div>
+            </section>
+
+            <!-- Content Section -->
+            <section class="content-section">
+                <p class="property-description">
+                    ديارا المروج بيئة معمارية حديثة تنسجم مع أسلوب الحياة المتطور.
+                    يتكون المشروع من قلوتين على مساحة 200 م² لكل وحدة، في موقع استثنائي داخل حي المروج، أحد الأحياء الناشئة في وسط مدينة الرياض.
+                </p>
+
+                <!-- Floor Plans -->
+                <div class="floor-plans">
+                    <h3>مخطط الوحدة</h3>
+                    <div class="plans-grid">
+                        <div class="plan-card">
+                            <div class="plan-image">
+                                <img src="https://fls-9ea20a57-aa90-4fb3-be13-1a37bcb31bde.laravel.cloud/01JXJDYFCQVPVW7XMTJZTGCD08.png" alt="مخطط فيلا 01" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px 10px 0 0;">
+                            </div>
+                            <div class="plan-info">
+                                <div class="plan-title">فيلا 01 عرض بيانات الوحدة</div>
+                                <div class="plan-specs">
+                                    <span><i class="fas fa-bath"></i> 7</span>
+                                    <span><i class="fas fa-bed"></i> 4</span>
+                                    <span><i class="fas fa-expand"></i> 200 م²</span>
+                                </div>
+                                <div class="plan-price">3,700,000 ر.س</div>
+                            </div>
+                        </div>
+
+                        <div class="plan-card">
+                            <div class="plan-image">
+                                <img src="https://fls-9ea20a57-aa90-4fb3-be13-1a37bcb31bde.laravel.cloud/01JXJDYFCQVPVW7XMTJZTGCD08.png" alt="مخطط فيلا 02" style="width: 100%; height: 100%; object-fit: cover; border-radius: 10px 10px 0 0;">
+                            </div>
+                            <div class="plan-info">
+                                <div class="plan-title">فيلا 02 عرض بيانات الوحدة</div>
+                                <div class="plan-specs">
+                                    <span><i class="fas fa-bath"></i> 7</span>
+                                    <span><i class="fas fa-bed"></i> 4</span>
+                                    <span><i class="fas fa-expand"></i> 200 م²</span>
+                                </div>
+                                <div class="plan-price">3,700,000 ر.س</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Features Section -->
+                <div class="features-section">
+                    <div class="features-column">
+                        <h3>المميزات</h3>
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-snowflake"></i>
+                                </div>
+                                <div class="feature-title">تكييف مخفي</div>
+                                <div class="feature-subtitle">مخفي</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-cube"></i>
+                                </div>
+                                <div class="feature-title">بدون سطح</div>
+                                <div class="feature-subtitle">سطح</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <div class="feature-title">طابقات حديثة</div>
+                                <div class="feature-subtitle">حديثة</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="features-column">
+                        <h3>الضمانات</h3>
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-bolt"></i>
+                                </div>
+                                <div class="feature-title">الكهرباء</div>
+                                <div class="feature-subtitle">متكفل</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-tools"></i>
+                                </div>
+                                <div class="feature-title">السباكة والأدوات الصحية</div>
+                                <div class="feature-subtitle">متكفل</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-home"></i>
+                                </div>
+                                <div class="feature-title">الهيكل الإنشائي</div>
+                                <div class="feature-subtitle">متكفل</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div class="feature-title">تأمين ضد الحريق</div>
+                                <div class="feature-subtitle">5 سنوات</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="feature-title">المواضع الحمراء</div>
+                                <div class="feature-subtitle">عند التسليم</div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-cog"></i>
+                                </div>
+                                <div class="feature-title">تطبيق الكهرباء</div>
+                                <div class="feature-subtitle">متكفل</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map Section -->
+                <div class="map-section">
+                    <h3>موقع المشروع</h3>
+                    <div style="text-align: center; margin-bottom: 10px; color: #666;">
+                        الرياض - المروج
+                    </div>
+                    <div class="map-container">
+                        <div style="position: relative; width: 100%; height: 100%; background: #f0f9ff; border-radius: 10px; overflow: hidden;">
+                            <!-- خريطة تفاعلية -->
+                            <iframe 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.5539829662616!2d46.67387008667!3d24.754314133091!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2efb6b9b6b6b6b%3A0x6b6b6b6b6b6b6b6b!2z2K_Zitin2LHYpyDYp9mE2YXYsdmI2Kw!5e0!3m2!1sar!2ssa!4v1640000000000!5m2!1sar!2ssa"
+                                width="100%" 
+                                height="100%" 
+                                style="border:0; border-radius: 10px;" 
+                                allowfullscreen="" 
+                                loading="lazy" 
+                                referrerpolicy="no-referrer-when-downgrade"
+                                title="موقع ديارا المروج">
+                            </iframe>
+                            
+                            <!-- زر فتح في Google Maps -->
+                            <div style="position: absolute; top: 10px; left: 10px; z-index: 10;">
+                                <a href="https://www.google.com/maps/place/24%C2%B045'15.5%22N+46%C2%B040'25.9%22E/@24.7543141,46.6760588,17z/data=!3m1!4b1!4m4!3m3!8m2!3d24.7543141!4d46.6738701?entry=ttu&g_ep=EgoyMDI1MDcyMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" style="background: rgba(255, 255, 255, 0.9); color: #1e40af; padding: 8px 12px; border-radius: 6px; text-decoration: none; font-size: 13px; display: inline-flex; align-items: center; gap: 5px; box-shadow: 0 2px 10px rgba(0,0,0,0.2); border: 1px solid #e0e0e0;">
+                                    <i class="fas fa-external-link-alt"></i>
+                                    فتح في Google Maps
+                                </a>
+                            </div>
+                            
+                            <!-- عنوان المشروع على الخريطة -->
+                            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(255, 255, 255, 0.95); padding: 10px 15px; border-radius: 8px; box-shadow: 0 2px 15px rgba(0,0,0,0.2); text-align: center; pointer-events: none;">
+                                <div style="color: #1e40af; font-weight: bold; margin-bottom: 3px;">ديارا المروج</div>
+                                <div style="color: #666; font-size: 12px;">الرياض - المروج</div>
+                                <div style="position: absolute; bottom: -8px; left: 50%; transform: translateX(-50%); width: 0; height: 0; border-left: 8px solid transparent; border-right: 8px solid transparent; border-top: 8px solid rgba(255, 255, 255, 0.95);"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nearby Landmarks -->
+                <div class="nearby-landmarks">
+                    <h3>المعالم القريبة</h3>
+                    <div class="landmarks-grid">
+                        <div class="landmark-item">
+                            <div class="landmark-icon">
+                                <i class="fas fa-road"></i>
+                            </div>
+                            <div class="landmark-info">
+                                <div class="landmark-name">طريق الملك فهد</div>
+                                <div class="landmark-distance">المسافة: 2 كم</div>
+                            </div>
+                        </div>
+                        <div class="landmark-item">
+                            <div class="landmark-icon">
+                                <i class="fas fa-shopping-cart"></i>
+                            </div>
+                            <div class="landmark-info">
+                                <div class="landmark-name">مول الرياض جاليري</div>
+                                <div class="landmark-distance">المسافة: 3 كم</div>
+                            </div>
+                        </div>
+                        <div class="landmark-item">
+                            <div class="landmark-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <div class="landmark-info">
+                                <div class="landmark-name">برج المدرك الجنوبي</div>
+                                <div class="landmark-distance">المسافة: 3 كم</div>
+                            </div>
+                        </div>
+                        <div class="landmark-item">
+                            <div class="landmark-icon">
+                                <i class="fas fa-road"></i>
+                            </div>
+                            <div class="landmark-info">
+                                <div class="landmark-name">طريق الإمام سعود بن عبدالعزيز</div>
+                                <div class="landmark-distance">المسافة: 1 كم</div>
+                            </div>
+                        </div>
+                        <div class="landmark-item">
+                            <div class="landmark-icon">
+                                <i class="fas fa-plane"></i>
+                            </div>
+                            <div class="landmark-info">
+                                <div class="landmark-name">KAFD</div>
+                                <div class="landmark-distance">المسافة: 5 كم</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- WhatsApp Button -->
+    <button class="whatsapp-btn" onclick="openWhatsApp()">
+        <i class="fab fa-whatsapp"></i>
+    </button>
+
+    <!-- Interest Form Modal -->
+    <div class="modal-overlay" id="interestModal">
+        <div class="interest-modal">
+            <div class="modal-header">
+                <h3 class="modal-title">تقديم اهتمام لشراء الوحدة</h3>
+                <button class="close-btn" onclick="closeInterestForm()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="interestForm" onsubmit="submitInterest(event)">
+                    <div class="form-group">
+                        <label class="form-label">اختر الوحدة</label>
+                        <div class="unit-selection">
+                            <div class="unit-option selected" onclick="selectUnit(this, 'الوحدة الأولى')">
+                                <div style="font-weight: bold; margin-bottom: 5px;">الوحدة الأولى</div>
+                                <div style="font-size: 12px; color: #666;">المسكن الأول</div>
+                            </div>
+                            <div class="unit-option" onclick="selectUnit(this, 'الوحدة الثانية')">
+                                <div style="font-weight: bold; margin-bottom: 5px;">الوحدة الثانية</div>
+                                <div style="font-size: 12px; color: #666;">المسكن الثاني</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">الاسم الأخير</label>
+                        <input type="text" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">بريد الكتروني</label>
+                        <input type="email" class="form-input" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">رقم الهاتف</label>
+                        <div class="form-row">
+                            <div class="country-code">966+</div>
+                            <input type="tel" class="form-input" placeholder="5xxxxxxxx" required>
+                        </div>
+                        <div style="font-size: 12px; color: #999; margin-top: 5px;">
+                            أدخل رقم الجوال بدون رمز الدولة (يبدأ بـ 5)
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">طريقة التواصل</label>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" id="cash" name="payment" value="cash" checked>
+                                <label for="cash">كاش</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="installment" name="payment" value="installment">
+                                <label for="installment">تقسيط</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">الغرض من الشراء</label>
+                        <div class="radio-group">
+                            <div class="radio-item">
+                                <input type="radio" id="residence" name="purpose" value="residence" checked>
+                                <label for="residence">سكن</label>
+                            </div>
+                            <div class="radio-item">
+                                <input type="radio" id="investment" name="purpose" value="investment">
+                                <label for="investment">استثمار</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">إرسال</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let selectedUnit = 'الوحدة الأولى';
+        
+        // Hero image slider
+        const heroImages = [
+            'https://fls-9ea20a57-aa90-4fb3-be13-1a37bcb31bde.laravel.cloud/project-media/01JXG0X4NNHCD87N91NKE43KH0.JPG',
+            'https://fls-9ea20a57-aa90-4fb3-be13-1a37bcb31bde.laravel.cloud/project-media/01JXG0XAHMVP6AGD0AHH1KT22G.JPG',
+            'https://fls-9ea20a57-aa90-4fb3-be13-1a37bcb31bde.laravel.cloud/project-media/01JXG0XHGGNVHMXK8FEY8AZ0QC.JPG',
+            'https://fls-9ea20a57-aa90-4fb3-be13-1a37bcb31bde.laravel.cloud/project-media/01JXG0XQAV7E56PYRXE1B8NT30.JPG',
+            'https://fls-9ea20a57-aa90-4fb3-be13-1a37bcb31bde.laravel.cloud/project-media/01JXG0XV1PCQJVCG0HBHRB1GM2.JPG'
+        ];
+        
+        let currentImageIndex = 0;
+        
+        function nextImage() {
+            currentImageIndex = (currentImageIndex + 1) % heroImages.length;
+            updateHeroImage();
+        }
+        
+        function previousImage() {
+            currentImageIndex = (currentImageIndex - 1 + heroImages.length) % heroImages.length;
+            updateHeroImage();
+        }
+        
+        function updateHeroImage() {
+            const heroImage = document.getElementById('heroImage');
+            heroImage.style.opacity = '0';
+            
+            setTimeout(() => {
+                heroImage.src = heroImages[currentImageIndex];
+                heroImage.style.opacity = '1';
+            }, 250);
+        }
+
+        function openWhatsApp() {
+            const phoneNumber = '966571653884';
+            const message = 'مرحباً، أريد الاستفسار عن مشروع ديارا المروج';
+            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+
+        function showInterestForm() {
+            document.getElementById('interestModal').classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeInterestForm() {
+            document.getElementById('interestModal').classList.remove('show');
+            document.body.style.overflow = 'auto';
+        }
+
+        function selectUnit(element, unitName) {
+            // Remove selected class from all units
+            document.querySelectorAll('.unit-option').forEach(unit => {
+                unit.classList.remove('selected');
+            });
+            
+            // Add selected class to clicked unit
+            element.classList.add('selected');
+            selectedUnit = unitName;
+        }
+
+        function submitInterest(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const name = formData.get('name') || event.target.querySelector('input[type="text"]').value;
+            const email = formData.get('email') || event.target.querySelector('input[type="email"]').value;
+            const phone = formData.get('phone') || event.target.querySelector('input[type="tel"]').value;
+            const payment = formData.get('payment');
+            const purpose = formData.get('purpose');
+
+            const message = `مرحباً، أريد تسجيل اهتمام لشراء وحدة في مشروع ديارا المروج
+
+الوحدة المختارة: ${selectedUnit}
+الاسم: ${name}
+البريد الإلكتروني: ${email}
+رقم الجوال: ${phone}
+طريقة الدفع: ${payment === 'cash' ? 'كاش' : 'تقسيط'}
+الغرض من الشراء: ${purpose === 'residence' ? 'سكن' : 'استثمار'}
+
+أرجو التواصل معي لمناقشة التفاصيل.`;
+
+            const phoneNumber = '966571653884';
+            const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            
+            // Close modal and open WhatsApp
+            closeInterestForm();
+            window.open(url, '_blank');
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('interestModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeInterestForm();
+            }
+        });
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeInterestForm();
+            }
+        });
+
+        // Add smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add loading animation for images
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.addEventListener('load', function() {
+                    this.style.opacity = '1';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
